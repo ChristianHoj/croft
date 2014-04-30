@@ -2,6 +2,8 @@
 
 class BookController extends \BaseController {
 
+	protected $layout = 'layout';
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -10,7 +12,7 @@ class BookController extends \BaseController {
 	public function index()
 	{
 		$books = Book::all();
-		return View::make('books.index', array('books' => $books));
+		$this->layout->content = View::make('books.index', array('books' => $books));
 	}
 
 
@@ -21,7 +23,7 @@ class BookController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('books.create', array('book' => new Book));
+		$this->layout->content = View::make('books.create', array('book' => new Book));
 	}
 
 
@@ -47,7 +49,7 @@ class BookController extends \BaseController {
 	public function show($id)
 	{
 		$book = Book::find($id);
-		return View::make('books.show', array('book' => $book));
+		$this->layout->content = View::make('books.show', array('book' => $book));
 	}
 
 
