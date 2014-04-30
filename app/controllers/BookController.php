@@ -21,7 +21,7 @@ class BookController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('books.create', array('book' => new Book));
 	}
 
 
@@ -32,7 +32,12 @@ class BookController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$book = new Book;
+		$book->title = Input::get('title');
+		$book->description = Input::get('description');
+		$book->save();
+
+		return Redirect::to('books');
 	}
 
 
