@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'pgsql',
+	'default' => 'heroku-pgsql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -69,6 +69,17 @@ return array(
 			'database' => 'croft',
 			'username' => 'laravel',
 			'password' => 'laravel',
+			'charset'  => 'utf8',
+			'prefix'   => '',
+			'schema'   => 'public',
+		),
+
+		'heroku-pgsql' => array(
+			'driver'   => 'pgsql',
+			'host'     => 'ec2-54-243-42-236.compute-1.amazonaws.com',
+			'database' => 'dcr8hn4skkmo37',
+			'username' => 'nameladwbvbsyl',
+			'password' => '4_vy9nnTlLcqSoBXlhJU17k29f',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
